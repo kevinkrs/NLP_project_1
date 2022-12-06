@@ -1,7 +1,7 @@
 from flask import Flask,render_template,url_for,request
 import pandas as pd
 import spacy
-nlp = spacy.load('en_core_web_sm')
+nlp = spacy.load('spacy_gerNER_updated_400_5')
 
 app = Flask(__name__)
 
