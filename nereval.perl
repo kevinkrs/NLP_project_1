@@ -170,8 +170,8 @@ while (<STDIN>) {
 
    if ($nbrOfFeatures < 0) { $nbrOfFeatures = $#features; }
    elsif ($nbrOfFeatures != $#features and @features != 0) {
-      printf STDERR "unexpected number of features: %d (%d)\n",
-         $#features+1,$nbrOfFeatures+1;
+      printf STDERR "unexpected number of features: %d (%d) in line %d\n",
+         $#features+1,$nbrOfFeatures+1, $linecounter;
       exit(1);
    }
 
