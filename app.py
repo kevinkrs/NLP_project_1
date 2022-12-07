@@ -1,7 +1,7 @@
 from flask import Flask,render_template,url_for,request
 import pandas as pd
 import spacy
-nlp = spacy.load('spacy_gerNER_updated_400_5')
+nlp = spacy.load('spacy_gerNER_updated_400_5_de_core_news_sm')
 
 app = Flask(__name__)
 
@@ -28,20 +28,20 @@ def process():
 			d.append((ent.label_, ent.text))
 			df = pd.DataFrame(d, columns=('named entity', 'output'))
 			ORG_named_entity = df.loc[df['named entity'] == 'ORG']['output']
-			PERSON_named_entity = df.loc[df['named entity'] == 'PERSON']['output']
-			GPE_named_entity = df.loc[df['named entity'] == 'GPE']['output']
-			MONEY_named_entity = df.loc[df['named entity'] == 'MONEY']['output']
+			PER_named_entity = df.loc[df['named entity'] == 'PER']['output']
+			MISC_named_entity = df.loc[df['named entity'] == 'MISC']['output']
+			LOC_named_entity = df.loc[df['named entity'] == 'LOC']['output']
 		if choice == 'organization':
 			results = ORG_named_entity
 			num_of_results = len(results)
 		elif choice == 'person':
-			results = PERSON_named_entity
+			results = PER_named_entity
 			num_of_results = len(results)
-		elif choice == 'geopolitical':
-			results = GPE_named_entity
+		elif choice == 'other':
+			results = MISC_named_entity
 			num_of_results = len(results)
-		elif choice == 'money':
-			results = MONEY_named_entity
+		elif choice == 'location':
+			results = LOC_named_entity
 			num_of_results = len(results)
 
 	return render_template("index.html",results=results,num_of_results = num_of_results)
