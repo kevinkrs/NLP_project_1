@@ -1,5 +1,5 @@
 # Report
-- Project report can be found as pdf with the name `spaCy_NER_Project_Report.pdf``
+- Project report can be found as pdf with the name `spaCy_NER_Project_Report.pdf`
 
 # EXTRA Flask app
 - Flask server for inference is available.
