@@ -14,9 +14,9 @@ def process():
 	results = pd.Series([])	
 	num_of_results = 0
 	ORG_named_entity = pd.Series([])
-	PERSON_named_entity = pd.Series([])
-	GPE_named_entity = pd.Series([])
-	MONEY_named_entity = pd.Series([])
+	PER_named_entity = pd.Series([])
+	MISC_named_entity = pd.Series([])
+	LOC_named_entity = pd.Series([])
 	if request.method == 'POST':
 		choice = request.form['taskoption']
 		rawtext = request.form['rawtext']
