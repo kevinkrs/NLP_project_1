@@ -1,5 +1,8 @@
 
 # model folder
-./spacy_gerNER_updated*
+spacy_gerNER_updated*
+
+# tsv folder
+eval_outputs
 
 .DS_store
